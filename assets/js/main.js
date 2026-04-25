@@ -44,7 +44,6 @@ function bindAddEntry() {
         const nextDay = currentEntries.length > 0
             ? Math.max(...currentEntries.map(e => e.dayNumber)) + 1
             : 1;
-        // Якщо поле пусте - ставимо хрестик. Якщо є текст - ставимо галочку і текст.
         const entryText = text ? `✅ ${text}` : `❌ Без вчинків`;
         const newEntry = {
             id: Date.now().toString() + Math.random().toString(36).substring(2),
@@ -87,7 +86,6 @@ function bindListActions() {
         else if (action === "edit") {
             const entry = currentEntries.find(e => e.id === id);
             if (entry) {
-                // Прибираємо значки для зручного редагування
                 const cleanText = entry.text.replace("✅ ", "").replace("❌ Без вчинків", "");
                 const newText = window.prompt("Відредагуйте ваш вчинок:", cleanText);
                 if (newText !== null) {
@@ -102,7 +100,6 @@ function bindListActions() {
 }
 function bindRendering() {
     combineLatest([entries$, filter$]).subscribe(([entries, filter]) => {
-        // Фільтрація: показуємо тільки хороші вчинки (з галочкою), якщо вибрано відповідний фільтр
         const filtered = entries.filter(e => filter === "all" ? true : e.text.startsWith("✅"));
         if (filtered.length === 0) {
             habitList.innerHTML = `<p class="empty">Записів не знайдено.</p>`;
@@ -119,17 +116,15 @@ function bindRendering() {
         </div>
       `).join("");
         }
-        // ЛОГІКА СТРІКУ (Рахуємо безперервні успішні дні з кінця)
         let currentStreak = 0;
         for (let i = entries.length - 1; i >= 0; i--) {
             if (entries[i].text.startsWith("✅")) {
                 currentStreak++;
             }
             else {
-                break; // Якщо зустріли хрестик - стрік обривається
+                break;
             }
         }
-        // Показуємо стрік тільки якщо є хоча б 3 дні підряд
         if (currentStreak >= 3) {
             streakContainer.style.display = "flex";
             streakContainer.innerHTML = `

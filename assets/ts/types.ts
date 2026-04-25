@@ -1,4 +1,3 @@
-// Фільтр: всі дні або тільки ті, де є записи
 export type HabitFilter = "all" | "filled";
 
 export interface HabitEntry {
