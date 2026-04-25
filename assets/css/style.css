@@ -1,0 +1,145 @@
+:root {
+    --bg-color: #dddfd4;
+    --primary-teal: #3fb0ac;
+    --text-dark: #173e43;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: var(--text-dark);
+}
+
+.layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.add-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--primary-teal);
+    border-radius: 5px;
+    color: var(--text-dark);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+.btn-primary {
+    background-color: var(--primary-teal);
+    color: white;
+}
+
+.filters button {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    margin-right: 5px;
+}
+
+    .filters button.active {
+        background-color: var(--primary-teal);
+        color: white;
+    }
+
+.vertical-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.habit-card {
+    background-color: white;
+    border: 2px solid var(--primary-teal);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.habit-day {
+    background-color: var(--text-dark);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.habit-text {
+    flex: 1;
+    color: var(--text-dark);
+}
+
+.btn-edit {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+}
+
+.btn-delete {
+    background-color: var(--text-dark);
+    color: white;
+}
+
+.streak-column {
+    background-color: white;
+    border: 2px solid var(--primary-teal);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.streak-box {
+    background-color: var(--primary-teal);
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календар звичок (RxJS)</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.8.1/rxjs.umd.min.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Календар хороших звичок</h1>
+        </header>
+
+        <div class="layout">
+            <main class="main-content">
+                <div class="card">
+                    <h2>Додати прогрес</h2>
+                    <form id="habit-form" class="add-form">
+                        <input type="text" id="habit-input" placeholder="Що корисного ви зробили сьогодні?">
+                        <button type="submit" class="btn-primary">Додати день</button>
+                    </form>
+
+                    <div id="filter-buttons" class="filters">
+                        <button data-filter="all" class="active">Усі записи</button>
+                        <button data-filter="filled">З нотатками</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Ваші дні</h2>
+                    <div id="habit-list" class="vertical-list"></div>
+                </div>
+            </main>
+
+            <aside>
+                <div id="streak-container" class="streak-column" style="display: none;"></div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
